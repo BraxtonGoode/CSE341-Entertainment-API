@@ -61,8 +61,8 @@ const updateBook = async (req, res) => {
     };
     const result = await MongoDb.getDb()
       .collection('Books')
-      .replaceOne({ _id: bookId }, book);
-    if (result.modifiedCount === 0) {
+      .updateOne({ _id: bookId }, { $set: book });
+    if (result.matchedCount === 0) {
       return res.status(404).send('Book not found');
     }
     res.status(200).json(result);
