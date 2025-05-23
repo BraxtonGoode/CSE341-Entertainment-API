@@ -5,7 +5,7 @@
     "description": "API for managing books and movies",
     "version": "1.0.0"
   },
-  "host": "cse341-entertainment-api.onrender.com",
+  "host": "https://cse341-entertainment-api.onrender.com/",
   "basePath": "/",
   "schemes": [
     "https"
@@ -173,6 +173,46 @@
           },
           "422": {
             "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/movies/": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/movies/{id}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           },
           "500": {
             "description": "Internal Server Error"
