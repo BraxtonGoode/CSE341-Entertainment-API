@@ -5,7 +5,7 @@
     "description": "API for managing books and movies",
     "version": "1.0.0"
   },
-  "host": "https://cse341-entertainment-api.onrender.com",
+  "host": "cse341-entertainment-api.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
