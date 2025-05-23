@@ -194,6 +194,52 @@
             "description": "Internal Server Error"
           }
         }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Title": {
+                  "example": "any"
+                },
+                "Director": {
+                  "example": "any"
+                },
+                "ReleaseYear": {
+                  "example": "any"
+                },
+                "Genre": {
+                  "example": "any"
+                },
+                "Language": {
+                  "example": "any"
+                },
+                "RuntimeMinutes": {
+                  "example": "any"
+                },
+                "Rating": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       }
     },
     "/movies/{id}": {
@@ -213,6 +259,86 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Title": {
+                  "example": "any"
+                },
+                "Director": {
+                  "example": "any"
+                },
+                "ReleaseYear": {
+                  "example": "any"
+                },
+                "Genre": {
+                  "example": "any"
+                },
+                "Language": {
+                  "example": "any"
+                },
+                "RuntimeMinutes": {
+                  "example": "any"
+                },
+                "Rating": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
           },
           "500": {
             "description": "Internal Server Error"
