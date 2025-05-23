@@ -14,5 +14,5 @@ router.get('/:id', booksController.getBookById);
 // POST, PUT, and DELETE requests for books
 router.post('/', validateBookRules(), validateBook, booksController.addBook);
 router.put('/:id', validateBookRules(), validateBook, booksController.updateBook);
-router.delete('/:id', validateBookRules(), validateBook, booksController.deleteBook);
+router.delete('/:id', booksController.deleteBook);
 module.exports = router;

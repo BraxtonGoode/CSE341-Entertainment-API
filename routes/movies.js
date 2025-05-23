@@ -13,6 +13,6 @@ router.get('/:id', moviesController.getMovieById);
 // POST, PUT, and DELETE requests for movies
 router.post('/', validateMovieRules(), validateMovie, moviesController.addMovie);
 router.put('/:id', validateMovieRules(), validateMovie, moviesController.updateMovie);
-router.delete('/:id', validateMovieRules(), validateMovie, moviesController.deleteMovie);
+router.delete('/:id',  moviesController.deleteMovie);
 
 module.exports = router;
