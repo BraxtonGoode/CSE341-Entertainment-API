@@ -60,7 +60,7 @@ const updateMovie = async (req, res) => {
     };
     const result = await MongoDb.getDb()
       .collection('Movies')
-      .replaceOne({ _id: movieId }, { $set: movie });
+      .updateOne({ _id: movieId }, { $set: movie });
     res.status(200).json(result);
   } catch (error) {
     res.status(500).json({ error: error.message });
